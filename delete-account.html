@@ -1,16 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Delete Your Account - KundliSetu</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Your Account - KundliSetu</title>
 <style>
-body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #3D2817; line-height: 1.6; }
-h1 { color: #CC5200; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; background: #FFF8F0; color: #3D2817; line-height: 1.7; }
+    a { color: #CC5200; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+    header { background: #CC5200; padding: 18px 0; }
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { color: #fff; font-size: 22px; font-weight: bold; text-decoration: none; }
+    nav a { color: #fff; margin-left: 24px; font-size: 15px; text-decoration: none; }
+    main { padding: 50px 0; }
+    h1 { color: #CC5200; font-size: 32px; margin-bottom: 24px; }
+    .box { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 24px; margin-top: 20px; }
+    footer { background: #0B0F2E; color: #888; text-align: center; padding: 24px 0; font-size: 13px; margin-top: 40px; }
+    footer a { color: #ccc; }
+    @media (max-width: 600px) { nav a { margin-left: 12px; font-size: 13px; } }
 </style>
 </head>
 <body>
-<h1>Delete Your Account</h1>
-<p>To request deletion of your KundliSetu account and all associated data (email, birth details, report history, coin balance), please email us at <strong>kundlisetu.support@gmail.com</strong> with the subject line "Account Deletion Request," using the same email address associated with your account.</p>
-<p>We will process your request and permanently delete your data within 30 days, except where retention is required by law (e.g., payment records for tax/audit purposes, which are held by Razorpay per their own policies).</p>
+
+<header>
+    <div class="container">
+        <a href="index.html" class="logo">Kundli Setu</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="privacy-policy.html">Privacy</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <h1>Delete Your Account</h1>
+    <p>To request deletion of your KundliSetu account and all associated data (email, birth details, report history, coin balance), please email us at <strong>kundlisetu.support@gmail.com</strong> with the subject line "Account Deletion Request," using the same email address associated with your account.</p>
+
+    <div class="box">
+        <p>We will process your request and permanently delete your data within <strong>30 days</strong>, except where retention is required by law (e.g., payment records for tax/audit purposes, which are held by Razorpay per their own policies).</p>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        © 2026 KundliSetu · <a href="index.html">Home</a> · <a href="terms-of-service.html">Terms</a> · <a href="privacy-policy.html">Privacy</a>
+    </div>
+</footer>
+
 </body>
 </html>

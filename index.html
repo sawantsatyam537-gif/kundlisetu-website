@@ -1,21 +1,225 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>KundliSetu</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KundliSetu – Honest Vedic Astrology, No Upsells</title>
+<meta name="description" content="KundliSetu is a Vedic astrology app for Indian users. Get accurate Kundli, matching, and AI-guided readings — honest pricing, no upsells. Download on Google Play.">
 <style>
-body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #3D2817; }
-h1 { color: #CC5200; }
-a { color: #CC5200; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; background: #FFF8F0; color: #3D2817; line-height: 1.6; }
+    a { text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    header { background: #CC5200; padding: 18px 0; position: sticky; top: 0; z-index: 100; }
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { color: #fff; font-size: 22px; font-weight: bold; }
+    nav a { color: #fff; margin-left: 28px; font-size: 15px; }
+    .btn-download { background: #FFF8F0; color: #CC5200 !important; padding: 8px 18px; border-radius: 24px; font-weight: bold; }
+
+    .hero { background: linear-gradient(180deg, #0B0F2E 0%, #1A1F4D 100%); color: #fff; padding: 80px 0; text-align: center; }
+    .hero .tag { color: #E8A93B; font-size: 14px; margin-bottom: 16px; }
+    .hero h1 { font-size: 42px; margin-bottom: 18px; }
+    .hero p { font-size: 18px; color: #F5F0E8; max-width: 600px; margin: 0 auto 30px; }
+    .hero-buttons a { display: inline-block; padding: 14px 28px; border-radius: 26px; font-weight: bold; margin: 0 8px; }
+    .btn-primary { background: #FF6B1A; color: #fff; }
+    .btn-secondary { background: transparent; color: #fff; border: 1px solid #fff; }
+
+    section { padding: 70px 0; }
+    .section-tag { color: #CC5200; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+    .section-title { font-size: 32px; margin: 8px 0 16px; }
+    .section-desc { color: #6b5847; max-width: 600px; margin-bottom: 40px; }
+
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .feature-card { background: #fff; padding: 28px; border-radius: 16px; border: 1px solid #eee; }
+    .feature-card .icon { font-size: 32px; margin-bottom: 14px; }
+    .feature-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .feature-card p { color: #6b5847; font-size: 14px; }
+
+    .pricing { background: #fff; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .price-card { border: 2px solid #eee; border-radius: 16px; padding: 30px 20px; text-align: center; }
+    .price-card.popular { border-color: #FF6B1A; }
+    .price-card .badge { color: #CC5200; font-size: 13px; font-weight: bold; margin-bottom: 10px; }
+    .price-card .coins { font-size: 30px; font-weight: bold; color: #3D2817; }
+    .price-card .label { color: #6b5847; font-size: 13px; margin-bottom: 12px; }
+    .price-card .price { font-size: 22px; font-weight: bold; color: #CC5200; }
+    .price-note { margin-top: 30px; font-size: 13px; color: #6b5847; text-align: center; }
+
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+    .step { text-align: center; }
+    .step .num { width: 44px; height: 44px; background: #FF6B1A; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin: 0 auto 16px; }
+    .step h3 { margin-bottom: 8px; }
+    .step p { color: #6b5847; font-size: 14px; }
+
+    .cta { background: #CC5200; color: #fff; text-align: center; }
+    .cta h2 { font-size: 28px; margin-bottom: 20px; }
+
+    footer { background: #0B0F2E; color: #ccc; padding: 50px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+    .footer-grid h4 { color: #fff; margin-bottom: 14px; }
+    .footer-grid a { color: #ccc; display: block; margin-bottom: 8px; font-size: 14px; }
+    .footer-bottom { border-top: 1px solid #333; padding-top: 20px; font-size: 13px; text-align: center; color: #888; }
+
+    @media (max-width: 600px) {
+        .hero h1 { font-size: 30px; }
+        nav a { margin-left: 14px; font-size: 13px; }
+        .footer-grid { grid-template-columns: 1fr; }
+    }
 </style>
 </head>
 <body>
-<h1>KundliSetu</h1>
-<p>Honest Vedic astrology, no upsells. KundliSetu offers Kundli generation, compatibility matching, and AI-assisted astrological guidance for Indian users.</p>
-<ul>
-<li><a href="privacy-policy.html">Privacy Policy</a></li>
-<li><a href="terms-of-service.html">Terms of Service</a></li>
-<li><a href="delete-account.html">Delete Your Account</a></li>
-</ul>
+
+<header>
+    <div class="container">
+        <div class="logo">Kundli Setu</div>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#pricing">Coins</a>
+            <a href="#how">How It Works</a>
+            <a href="privacy-policy.html">Privacy</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <div class="tag">🕉️ Made for India · Vedic Astrology</div>
+        <h1>Honest Astrology,<br>No Upsells</h1>
+        <p>Accurate Kundli generation, compatibility matching, and AI-guided readings — powered by real Vedic calculations, priced fairly, with no fear-selling.</p>
+        <div class="hero-buttons">
+            <a href="#" class="btn-primary">▶ Download on Play Store</a>
+            <a href="#features" class="btn-secondary">Learn More →</a>
+        </div>
+    </div>
+</section>
+
+<section id="features">
+    <div class="container">
+        <div class="section-tag">Why KundliSetu</div>
+        <h2 class="section-title">Real astrology, honestly delivered</h2>
+        <p class="section-desc">Built on genuine Swiss Ephemeris calculations, not guesswork — with pricing you can trust.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">🪔</div>
+                <h3>Accurate Kundli Charts</h3>
+                <p>Precise planetary positions using Lahiri Ayanamsa and classical Vedic methods.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">💞</div>
+                <h3>Ashtakoota Matching</h3>
+                <p>Full 36-guna compatibility matching with proper dosha analysis and cancellation rules.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🤖</div>
+                <h3>AI-Guided Readings</h3>
+                <p>Clear, honest interpretations on marriage, career, health, and more — no vague fortune-telling.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🌐</div>
+                <h3>8 Indian Languages</h3>
+                <p>Get your readings in English, Hindi, Marathi, Tamil, Telugu, Kannada, Gujarati, or Bengali.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h3>Private & Secure</h3>
+                <p>Built with Firebase Authentication and secure payment processing via Razorpay.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🪙</div>
+                <h3>Fair, Transparent Pricing</h3>
+                <p>No per-minute meters, no fear-based upsells — just honest coin pricing for real value.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pricing" class="pricing">
+    <div class="container">
+        <div class="section-tag">Coin Packs</div>
+        <h2 class="section-title">Simple, transparent pricing</h2>
+        <p class="section-desc">Purchase digital coins to unlock Kundli reports, matching, and expert guidance.</p>
+        <div class="pricing-grid">
+            <div class="price-card popular">
+                <div class="badge">🌟 Starter</div>
+                <div class="coins">55</div>
+                <div class="label">coins</div>
+                <div class="price">₹50</div>
+            </div>
+            <div class="price-card">
+                <div class="badge">🔥 Great Value</div>
+                <div class="coins">130</div>
+                <div class="label">coins</div>
+                <div class="price">₹100</div>
+            </div>
+            <div class="price-card">
+                <div class="badge">💎 Best Value</div>
+                <div class="coins">300</div>
+                <div class="label">coins</div>
+                <div class="price">₹200</div>
+            </div>
+        </div>
+        <p class="price-note">Coin purchases are final and non-transferable, valid only within the KundliSetu app. See our <a href="terms-of-service.html">Terms of Service</a> for details.</p>
+    </div>
+</section>
+
+<section id="how">
+    <div class="container">
+        <div class="section-tag">Getting Started</div>
+        <h2 class="section-title">Up and reading in 3 steps</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="num">1</div>
+                <h3>Download KundliSetu</h3>
+                <p>Get the app free from the Google Play Store and sign up in seconds.</p>
+            </div>
+            <div class="step">
+                <div class="num">2</div>
+                <h3>Enter Birth Details</h3>
+                <p>Provide your name, date, time, and place of birth for an accurate chart.</p>
+            </div>
+            <div class="step">
+                <div class="num">3</div>
+                <h3>Get Your Reading</h3>
+                <p>Buy coins and unlock Kundli reports, matching, or expert guidance instantly.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container">
+        <h2>Ready to discover your Kundli?</h2>
+        <a href="#" class="btn-primary" style="padding:14px 32px; border-radius:26px; font-weight:bold;">▶ Download Free on Play Store</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>Kundli Setu</h4>
+                <p style="font-size:14px;">Honest Vedic astrology for India. 🇮🇳</p>
+                <p style="font-size:13px; margin-top:10px;">Maharashtra, India</p>
+            </div>
+            <div>
+                <h4>App</h4>
+                <a href="#features">Features</a>
+                <a href="#pricing">Coin Packs</a>
+                <a href="#how">How It Works</a>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="delete-account.html">Delete Account</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 KundliSetu. All rights reserved. For users 18 years and above only. For informational and entertainment purposes.
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
